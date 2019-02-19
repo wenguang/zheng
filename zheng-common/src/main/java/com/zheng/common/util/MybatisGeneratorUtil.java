@@ -53,6 +53,16 @@ public class MybatisGeneratorUtil {
 		String os = System.getProperty("os.name");
 		String targetProject = module + "/" + module + "-dao";
 		String basePath = MybatisGeneratorUtil.class.getResource("/").getPath().replace("/target/classes/", "").replace(targetProject, "");
+
+		// debug output
+		{
+			System.out.println("----debug---- " + MybatisGeneratorUtil.class.getResource("/").getPath());
+			System.out.println("----debug---- " + MybatisGeneratorUtil.class.getResource("/").getPath().replace("/target/classes/", ""));
+			System.out.println("----debug---- " + basePath);
+			System.out.println("----debug---- " + targetProject);
+		}
+
+
 		if (os.toLowerCase().startsWith("win")) {
 			generatorConfig_vm = MybatisGeneratorUtil.class.getResource(generatorConfig_vm).getPath().replaceFirst("/", "");
 			service_vm = MybatisGeneratorUtil.class.getResource(service_vm).getPath().replaceFirst("/", "");
@@ -89,6 +99,14 @@ public class MybatisGeneratorUtil {
 			jdbcUtil.release();
 
 			String targetProjectSqlMap = basePath + module + "/" + module + "-rpc-service";
+
+			// debug output
+			{
+				System.out.println("----debug---- " + targetProject);
+				System.out.println("----debug---- " + targetProjectSqlMap);
+				System.out.println("----debug---- " + packageName);
+			}
+
 			context.put("tables", tables);
 			context.put("generator_javaModelGenerator_targetPackage", packageName + ".dao.model");
 			context.put("generator_sqlMapGenerator_targetPackage", packageName + ".dao.mapper");
@@ -98,6 +116,14 @@ public class MybatisGeneratorUtil {
 			context.put("generator_jdbc_password", AESUtil.aesDecode(jdbcPassword));
 			context.put("last_insert_id_tables", lastInsertIdTables);
 			VelocityUtil.generate(generatorConfig_vm, generatorConfigXml, context);
+
+			//debug output
+			{
+				System.out.println("----debug---- " + targetProject + "/src/main/java/" + packageName.replaceAll("\\.", "/") + "/dao/model");
+				System.out.println("----debug---- " + targetProject + "/src/main/java/" + packageName.replaceAll("\\.", "/") + "/dao/mapper");
+				System.out.println("----debug---- " + targetProjectSqlMap + "/src/main/java/" + packageName.replaceAll("\\.", "/") + "/dao/mapper");
+			}
+
 			// 删除旧代码
 			deleteDir(new File(targetProject + "/src/main/java/" + packageName.replaceAll("\\.", "/") + "/dao/model"));
 			deleteDir(new File(targetProject + "/src/main/java/" + packageName.replaceAll("\\.", "/") + "/dao/mapper"));
