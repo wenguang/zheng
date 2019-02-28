@@ -4,6 +4,30 @@
 
 **但它的注解本身不会执行功能，而是编译器或运行器或自定义的代码识别了这个注解而执行某个功能，这时注解才真正有了其代表的特性的功能。**
 
+@BaseService真正起作用的地方在ApplicationContextListener的onApplicationEvent事件响应方法中
+
+```java
+@Override
+    public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
+        // root application context
+        if(null == contextRefreshedEvent.getApplicationContext().getParent()) {
+            LOGGER.debug(">>>>> spring初始化完毕 <<<<<");
+            // spring初始化完毕后，通过反射调用所有使用BaseService注解的initMapper方法
+            Map<String, Object> baseServices = contextRefreshedEvent.getApplicationContext().getBeansWithAnnotation(BaseService.class);
+            for(Object service : baseServices.values()) {
+                LOGGER.debug(">>>>> {}.initMapper()", service.getClass().getName());
+                try {
+                    Method initMapper = service.getClass().getMethod("initMapper");
+                    initMapper.invoke(service);
+                } catch (Exception e) {
+                    LOGGER.error("初始化BaseService的initMapper方法异常", e);
+                    e.printStackTrace();
+                }
+            }
+```
+
+
+
 
 
 元注解：用于标注注解本身的，有5个，@Retention、@Documented、@Target、@Inherited、@Repeatable 
