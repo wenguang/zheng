@@ -431,4 +431,12 @@ public abstract class BaseServiceImpl<Mapper, Record, Example> implements BaseSe
 		return (Class<Mapper>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
 	}
 
+	// 测试代码
+	public Class<Mapper> getMapperClass2() {
+		System.out.println(getClass());
+		System.out.println(getClass().getGenericSuperclass());
+		System.out.println(((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0]);
+		return (Class<Mapper>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+	}
+
 }

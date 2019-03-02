@@ -50,6 +50,10 @@ public class ApplicationContextListener implements ApplicationListener<ContextRe
             }
 
         }
+        else {
+            // debug output
+            System.out.println("非顶层spring上下文");
+        }
     }
 
 }
