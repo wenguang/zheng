@@ -25,5 +25,6 @@
         <module>zheng-upms-rpc-service</module>
         <module>zheng-upms-client</module>
         <module>zheng-upms-server</module>
+        <module>zheng-upms-ztest</module>
     </modules>
 </project>
