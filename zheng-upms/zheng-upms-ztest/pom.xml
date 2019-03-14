@@ -53,7 +53,7 @@
     <build>
         <finalName>zheng-upms-ztest</finalName>
         <filters>
-            <filter>src/main/resources/configs/*.properties</filter>
+            <filter>src/main/resources/configs/${env}.properties</filter>
         </filters>
         <resources>
             <resource>
