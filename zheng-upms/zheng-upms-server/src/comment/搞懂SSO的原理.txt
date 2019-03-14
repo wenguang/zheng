@@ -1,0 +1,4 @@
+参考：https://blog.csdn.net/javaloveiphone/article/details/52439613
+CAS实现单点登录SSO执行原理探究(终于明白了)
+
+问题：文章提到全局会话用TGT，局部会话用传统session，若想兼容移动端那应该用什么方案呢？

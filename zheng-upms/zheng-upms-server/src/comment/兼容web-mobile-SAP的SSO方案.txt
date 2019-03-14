@@ -1,0 +1,4 @@
+JWT的方案：https://mp.weixin.qq.com/s/AoGfs6dH8s6Cpyw47vcUlw
+该方案只在认证中心才产生session，业务系统借助认证中心签发的jwt可以实现无状态，
+但它有个缺点：即使登录后，每次访问业务系统都要经过认证中心验证jwt中的sid(认证中心session的id)，认证中心的压力过大。
+此外，重定向过多，在期间传递的jwt本身虽可防篡改，但也要防范CSRF攻击
