@@ -1,0 +1,8 @@
+
+ServletContextAware是spring中的接口，只有一个方法：
+public void setServletContext(ServletContext servletContext)
+
+当一个类实现了该接口，在完成容器加载后，spring就调用所有实现ServletContextAware接口的setServletContext方法，这样就使得这些类可以获取servlet的上下文。
+
+而ZhengAdminUtil类的作法有些不同，它并不需要获得servlet上下文，如定义一个私有的ServletContext属性去持有servlet上下文，它就是利用setServletContext被调用的时机去做一些初始化的工作。
+
