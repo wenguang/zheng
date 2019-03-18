@@ -53,6 +53,33 @@
     </servlet-mapping>
 
     <!-- shiroFilter : DelegatingFilterProxy作用是自动到spring容器查找名字为shiroFilter（filter-name）的bean并把所有Filter的操作委托给它。然后将shiroFilter配置到spring容器即可 -->
+    <!--
+    这里filter-name中的shiroFilter配置在zheng-upms-client模块applicationContext-shiro.xml中，
+    DelagatingFilterProxy持有web上下文的引用，所以它能找到shiroFilter,
+    和配置别的fitler不同，filter-class中的DelegatingFilterProxy不是shiroFilter的类,
+
+    那用DelegatingFilterProxy的好处是什么呢？
+    参考：spring filter的targetFilterLifecycle作用 https://blog.csdn.net/u013378306/article/details/50801001
+
+    奥秒在targetFilterLifecycle
+
+    按filter-class对应filter-name实现类的方式配置的话，filter是被加载到web容器中（比例tomcat），
+    而spring配置中的beans是spring容器管理的，那filter想要引用spring配置中的bean就麻烦了，
+    作法是让spring容器来管理filter的生命周期，这样filter想引用其它的spring bean就容易了
+    targetFilterLifecycle设置为true上面就能实现这一点
+
+    注意：
+      shiroFilter对应的类是org.apache.shiro.spring.web.ShiroFilterFactoryBean,
+      而不是org.apache.shiro.web.servlet.ShiroFilter，它是实现spring bean接口的，而它也不是单纯的过滤器
+    而持有securityManager、shiro过滤器列表、loginUrl等对象，它更像是一个shiro.ini配置入口
+
+
+    Shiro对Servlet容器的FilterChain进行了代理，即ShiroFilter在继续Servlet容器的Filter链的执行之前，
+    通过ProxiedFilterChain对Servlet容器的FilterChain进行了代理；即先走Shiro自己的Filter体系，
+    然后才会委托给Servlet容器的FilterChain进行Servlet容器级别的Filter链执行；
+    Shiro的ProxiedFilterChain执行流程：1、先执行Shiro自己的Filter链；2、再执行Servlet容器的Filter链（即原始的Filter）。
+
+    -->
     <filter>
         <filter-name>shiroFilter</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
