@@ -30,7 +30,7 @@
             <!--classpath*:applicationContext*.xml-->
         <!--</param-value>-->
         <param-value>
-            classpath:applicationContext-simplify.xml
+            classpath:simplify-applicationContext.xml
         </param-value>
     </context-param>
 
@@ -47,7 +47,7 @@
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <!--<param-value>classpath*:springMVC-servlet.xml</param-value>-->
-            <param-value>classpath:springMVC-servlet-simplify.xml</param-value>
+            <param-value>classpath:simplify-springMVC-servlet.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>

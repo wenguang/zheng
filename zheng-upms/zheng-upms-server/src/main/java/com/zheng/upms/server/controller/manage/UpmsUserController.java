@@ -12,6 +12,7 @@ import com.zheng.upms.common.constant.UpmsResult;
 import com.zheng.upms.common.constant.UpmsResultConstant;
 import com.zheng.upms.dao.model.*;
 import com.zheng.upms.rpc.api.*;
+import com.zheng.upms.rpc.service.impl.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang.StringUtils;
@@ -41,22 +42,34 @@ public class UpmsUserController extends BaseController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UpmsUserController.class);
 
     @Autowired
-    private UpmsUserService upmsUserService;
+    private UpmsUserServiceImpl upmsUserService;
+//    private UpmsUserService upmsUserService;
+
 
     @Autowired
-    private UpmsRoleService upmsRoleService;
+    private UpmsRoleServiceImpl upmsRoleService;
+//    private UpmsRoleService upmsRoleService;
+
 
     @Autowired
-    private UpmsOrganizationService upmsOrganizationService;
+    private UpmsOrganizationServiceImpl upmsOrganizationService;
+//    private UpmsOrganizationService upmsOrganizationService;
+
 
     @Autowired
-    private UpmsUserOrganizationService upmsUserOrganizationService;
+    private UpmsUserOrganizationServiceImpl upmsUserOrganizationService;
+//    private UpmsUserOrganizationService upmsUserOrganizationService;
+
 
     @Autowired
-    private UpmsUserRoleService upmsUserRoleService;
+    private UpmsUserRoleServiceImpl upmsUserRoleService;
+//    private UpmsUserRoleService upmsUserRoleService;
+
 
     @Autowired
-    private UpmsUserPermissionService upmsUserPermissionService;
+    private UpmsUserPermissionServiceImpl upmsUserPermissionService;
+//    private UpmsUserPermissionService upmsUserPermissionService;
+
 
     @ApiOperation(value = "用户首页")
     @RequiresPermissions("upms:user:read")

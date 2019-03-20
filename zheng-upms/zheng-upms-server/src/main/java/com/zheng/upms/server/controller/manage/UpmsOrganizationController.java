@@ -10,6 +10,7 @@ import com.zheng.upms.common.constant.UpmsResultConstant;
 import com.zheng.upms.dao.model.UpmsOrganization;
 import com.zheng.upms.dao.model.UpmsOrganizationExample;
 import com.zheng.upms.rpc.api.UpmsOrganizationService;
+import com.zheng.upms.rpc.service.impl.UpmsOrganizationServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang.StringUtils;
@@ -37,7 +38,9 @@ public class UpmsOrganizationController extends BaseController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UpmsOrganizationController.class);
 
     @Autowired
-    private UpmsOrganizationService upmsOrganizationService;
+    private UpmsOrganizationServiceImpl upmsOrganizationService;
+//    private UpmsOrganizationService upmsOrganizationService;
+
 
     @ApiOperation(value = "组织首页")
     @RequiresPermissions("upms:organization:read")

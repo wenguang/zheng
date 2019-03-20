@@ -15,6 +15,8 @@ import com.zheng.upms.dao.model.UpmsRolePermission;
 import com.zheng.upms.dao.model.UpmsRolePermissionExample;
 import com.zheng.upms.rpc.api.UpmsRolePermissionService;
 import com.zheng.upms.rpc.api.UpmsRoleService;
+import com.zheng.upms.rpc.service.impl.UpmsRolePermissionServiceImpl;
+import com.zheng.upms.rpc.service.impl.UpmsRoleServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang.StringUtils;
@@ -44,10 +46,13 @@ public class UpmsRoleController extends BaseController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UpmsRoleController.class);
 
     @Autowired
-    private UpmsRoleService upmsRoleService;
+    private UpmsRoleServiceImpl upmsRoleService;
+//    private UpmsRoleService upmsRoleService;
+
 
     @Autowired
-    private UpmsRolePermissionService upmsRolePermissionService;
+    private UpmsRolePermissionServiceImpl upmsRolePermissionService;
+//    private UpmsRolePermissionService upmsRolePermissionService;
 
     @ApiOperation(value = "角色首页")
     @RequiresPermissions("upms:role:read")

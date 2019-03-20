@@ -7,6 +7,7 @@ import com.zheng.upms.common.constant.UpmsResultConstant;
 import com.zheng.upms.dao.model.UpmsLog;
 import com.zheng.upms.dao.model.UpmsLogExample;
 import com.zheng.upms.rpc.api.UpmsLogService;
+import com.zheng.upms.rpc.service.impl.UpmsLogServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang.StringUtils;
@@ -33,7 +34,9 @@ public class UpmsLogController extends BaseController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UpmsLogController.class);
 
     @Autowired
-    private UpmsLogService upmsLogService;
+    private UpmsLogServiceImpl upmsLogService;
+//    private UpmsLogService upmsLogService;
+
 
     @ApiOperation(value = "日志首页")
     @RequiresPermissions("upms:log:read")

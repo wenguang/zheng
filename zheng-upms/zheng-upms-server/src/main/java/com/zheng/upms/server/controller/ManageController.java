@@ -4,6 +4,8 @@ import com.zheng.common.base.BaseController;
 import com.zheng.upms.dao.model.*;
 import com.zheng.upms.rpc.api.UpmsApiService;
 import com.zheng.upms.rpc.api.UpmsSystemService;
+import com.zheng.upms.rpc.service.impl.UpmsApiServiceImpl;
+import com.zheng.upms.rpc.service.impl.UpmsSystemServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
@@ -30,10 +32,14 @@ public class ManageController extends BaseController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ManageController.class);
 
 	@Autowired
-	private UpmsSystemService upmsSystemService;
+	private UpmsSystemServiceImpl upmsSystemService;
+//	private UpmsSystemService upmsSystemService;
+
 
 	@Autowired
-	private UpmsApiService upmsApiService;
+	private UpmsApiServiceImpl upmsApiService;
+//	private UpmsApiService upmsApiService;
+
 
 	@ApiOperation(value = "后台首页")
 	@RequestMapping(value = "/index", method = RequestMethod.GET)

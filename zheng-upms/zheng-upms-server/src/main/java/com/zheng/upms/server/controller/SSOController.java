@@ -11,6 +11,8 @@ import com.zheng.upms.dao.model.UpmsSystem;
 import com.zheng.upms.dao.model.UpmsSystemExample;
 import com.zheng.upms.rpc.api.UpmsSystemService;
 import com.zheng.upms.rpc.api.UpmsUserService;
+import com.zheng.upms.rpc.service.impl.UpmsSystemServiceImpl;
+import com.zheng.upms.rpc.service.impl.UpmsUserServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang.BooleanUtils;
@@ -54,10 +56,14 @@ public class SSOController extends BaseController {
     private final static String ZHENG_UPMS_SERVER_CODE = "zheng-upms-server-code";
 
     @Autowired
-    UpmsSystemService upmsSystemService;
+    UpmsSystemServiceImpl upmsSystemService;
+//    UpmsSystemService upmsSystemService;
+
 
     @Autowired
-    UpmsUserService upmsUserService;
+    UpmsUserServiceImpl upmsUserService;
+//    UpmsUserService upmsUserService;
+
 
     @Autowired
     UpmsSessionDao upmsSessionDao;
