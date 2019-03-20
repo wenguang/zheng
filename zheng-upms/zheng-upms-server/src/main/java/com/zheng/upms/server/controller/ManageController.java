@@ -2,10 +2,8 @@ package com.zheng.upms.server.controller;
 
 import com.zheng.common.base.BaseController;
 import com.zheng.upms.dao.model.*;
-import com.zheng.upms.rpc.api.UpmsApiService;
-import com.zheng.upms.rpc.api.UpmsSystemService;
-import com.zheng.upms.rpc.service.impl.UpmsApiServiceImpl;
-import com.zheng.upms.rpc.service.impl.UpmsSystemServiceImpl;
+import com.zheng.upms.service.UpmsApiServiceImpl;
+import com.zheng.upms.service.UpmsSystemServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;

@@ -1,0 +1,3 @@
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'upmsPermissionServiceImpl': Unsatisfied dependency expressed through field 'upmsApiService'; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.zheng.upms.service.UpmsApiService' available: expected single matching bean but found 2: upmsApiServiceImpl,com.zheng.upms.service.UpmsApiServiceImpl#0
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)

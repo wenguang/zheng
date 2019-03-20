@@ -1,22 +1,17 @@
 package com.zheng.upms.server.controller.manage;
 
 import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.baidu.unbiz.fluentvalidator.ComplexResult;
 import com.baidu.unbiz.fluentvalidator.FluentValidator;
 import com.baidu.unbiz.fluentvalidator.ResultCollectors;
 import com.zheng.common.base.BaseController;
 import com.zheng.common.validator.LengthValidator;
-import com.zheng.upms.common.constant.UpmsResult;
-import com.zheng.upms.common.constant.UpmsResultConstant;
+import com.zheng.upms.constant.UpmsResult;
+import com.zheng.upms.constant.UpmsResultConstant;
 import com.zheng.upms.dao.model.UpmsRole;
 import com.zheng.upms.dao.model.UpmsRoleExample;
-import com.zheng.upms.dao.model.UpmsRolePermission;
-import com.zheng.upms.dao.model.UpmsRolePermissionExample;
-import com.zheng.upms.rpc.api.UpmsRolePermissionService;
-import com.zheng.upms.rpc.api.UpmsRoleService;
-import com.zheng.upms.rpc.service.impl.UpmsRolePermissionServiceImpl;
-import com.zheng.upms.rpc.service.impl.UpmsRoleServiceImpl;
+import com.zheng.upms.service.UpmsRolePermissionServiceImpl;
+import com.zheng.upms.service.UpmsRoleServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang.StringUtils;
@@ -29,7 +24,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

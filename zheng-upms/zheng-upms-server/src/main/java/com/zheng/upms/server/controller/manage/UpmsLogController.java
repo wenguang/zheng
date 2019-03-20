@@ -2,12 +2,11 @@ package com.zheng.upms.server.controller.manage;
 
 import com.zheng.common.base.BaseController;
 import com.zheng.common.util.StringUtil;
-import com.zheng.upms.common.constant.UpmsResult;
-import com.zheng.upms.common.constant.UpmsResultConstant;
+import com.zheng.upms.constant.UpmsResult;
+import com.zheng.upms.constant.UpmsResultConstant;
 import com.zheng.upms.dao.model.UpmsLog;
 import com.zheng.upms.dao.model.UpmsLogExample;
-import com.zheng.upms.rpc.api.UpmsLogService;
-import com.zheng.upms.rpc.service.impl.UpmsLogServiceImpl;
+import com.zheng.upms.service.UpmsLogServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang.StringUtils;

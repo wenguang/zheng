@@ -19,7 +19,6 @@
     </properties>
 
     <modules>
-        <module>zheng-common</module>
         <module>zheng-upms</module>
     </modules>
 </project>
