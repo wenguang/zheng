@@ -27,13 +27,13 @@
     <aop:config proxy-target-class="true"/>
 
     <!-- 拦截器 -->
-    <mvc:interceptors>
-        <!-- 获取登录信息 -->
-        <mvc:interceptor>
-            <mvc:mapping path="/manage/**"/>
-            <bean class="com.zheng.upms.server.interceptor.UpmsInterceptor"></bean>
-        </mvc:interceptor>
-    </mvc:interceptors>
+    <!--<mvc:interceptors>-->
+        <!--&lt;!&ndash; 获取登录信息 &ndash;&gt;-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/manage/**"/>-->
+            <!--<bean class="com.zheng.upms.server.interceptor.UpmsInterceptor"></bean>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
 
     <!-- 扫描controller -->
     <context:component-scan base-package="**.*controller"/>
