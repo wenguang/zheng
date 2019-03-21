@@ -21,5 +21,6 @@
     <modules>
         <module>zheng-upms-server</module>
         <module>zheng-upms-ztest2</module>
+        <module>zheng-upms-simple</module>
     </modules>
 </project>
