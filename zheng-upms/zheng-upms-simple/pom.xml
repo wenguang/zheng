@@ -376,6 +376,29 @@
                     <reload>automatic</reload>
                 </configuration>
             </plugin>
+            <!-- tomcat7插件 -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <path>/</path>
+                    <port>2222</port>
+                    <uriEncoding>UTF-8</uriEncoding>
+                    <finalName>zheng-umps-simple</finalName>
+                    <!-- 名称必须与配置文件的id名称一致 -->
+                    <server>tomcat7</server>
+                </configuration>
+                <!-- 在打包周期运行tomcat7 -->
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
