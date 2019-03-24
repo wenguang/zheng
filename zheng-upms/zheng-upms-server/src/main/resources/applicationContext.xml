@@ -16,21 +16,17 @@
 
     <!-- 装载service -->
     <context:component-scan base-package="**.service" />
-    <context:component-scan base-package="**.mapper" />
-
-    <!-- 装载自定义bean -->
-    <context:component-scan base-package="**.*" use-default-filters="false">
-        <context:include-filter type="assignable" expression="com.zheng.common.base.BaseInterface"></context:include-filter>
-    </context:component-scan>
 
     <!-- 启动任务注解 -->
     <task:annotation-driven />
-    <context:component-scan base-package="**.task" />
 
-    <!-- 启动解压zhengAdmin-x.x.x.jar到resources目录 -->
-    <!--<bean id="zhengAdminUtil" class="com.zheng.common.util.ZhengAdminUtil"></bean>-->
-
+    <bean class="com.zheng.common.util.SpringContextUtil"/>
     <bean class="com.zheng.common.listener.ApplicationContextListener"/>
+
+    <!-- 装载自定义bean -->
+    <!--<context:component-scan base-package="**.*" use-default-filters="false">-->
+    <!--<context:include-filter type="assignable" expression="com.zheng.common.base.BaseInterface"></context:include-filter>-->
+    <!--</context:component-scan>-->
 
 
 </beans>

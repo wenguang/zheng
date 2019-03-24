@@ -36,6 +36,16 @@ public class UpmsLogController extends BaseController {
     private UpmsLogServiceImpl upmsLogService;
 //    private UpmsLogService upmsLogService;
 
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    @ResponseBody
+    public Object hello() {
+        if (upmsLogService != null) {
+            System.out.println(upmsLogService.mapper);
+            System.out.println(upmsLogService.upmsLogMapper);
+        }
+        return new UpmsResult(UpmsResultConstant.SUCCESS, "hello spring mvc");
+    }
+
 
     @ApiOperation(value = "日志首页")
     @RequiresPermissions("upms:log:read")

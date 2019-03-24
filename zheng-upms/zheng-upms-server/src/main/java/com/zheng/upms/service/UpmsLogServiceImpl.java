@@ -23,5 +23,5 @@ public class UpmsLogServiceImpl extends BaseServiceImpl<UpmsLogMapper, UpmsLog, 
     private static final Logger LOGGER = LoggerFactory.getLogger(UpmsLogServiceImpl.class);
 
     @Autowired
-    UpmsLogMapper upmsLogMapper;
+    public UpmsLogMapper upmsLogMapper;
 }
