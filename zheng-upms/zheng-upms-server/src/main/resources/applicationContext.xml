@@ -16,6 +16,7 @@
 
     <!-- 装载service -->
     <context:component-scan base-package="**.service" />
+    <!--<context:component-scan base-package="**.session" />-->
 
     <!-- 启动任务注解 -->
     <task:annotation-driven />
