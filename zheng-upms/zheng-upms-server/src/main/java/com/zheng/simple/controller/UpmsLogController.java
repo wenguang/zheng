@@ -6,6 +6,7 @@ import com.zheng.upms.constant.UpmsResult;
 import com.zheng.upms.constant.UpmsResultConstant;
 import com.zheng.upms.dao.model.UpmsLog;
 import com.zheng.upms.dao.model.UpmsLogExample;
+import com.zheng.upms.service.UpmsLogService;
 import com.zheng.upms.service.UpmsLogServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -33,16 +34,11 @@ public class UpmsLogController extends BaseController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UpmsLogController.class);
 
     @Autowired
-    private UpmsLogServiceImpl upmsLogService;
-//    private UpmsLogService upmsLogService;
+    private UpmsLogService upmsLogService;
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     @ResponseBody
     public Object hello() {
-        if (upmsLogService != null) {
-            System.out.println(upmsLogService.mapper);
-            System.out.println(upmsLogService.upmsLogMapper);
-        }
         return new UpmsResult(UpmsResultConstant.SUCCESS, "hello spring mvc");
     }
 

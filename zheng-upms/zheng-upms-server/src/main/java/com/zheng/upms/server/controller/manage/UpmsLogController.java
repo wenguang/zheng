@@ -6,6 +6,7 @@ import com.zheng.upms.constant.UpmsResult;
 import com.zheng.upms.constant.UpmsResultConstant;
 import com.zheng.upms.dao.model.UpmsLog;
 import com.zheng.upms.dao.model.UpmsLogExample;
+import com.zheng.upms.service.UpmsLogService;
 import com.zheng.upms.service.UpmsLogServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -33,8 +34,8 @@ public class UpmsLogController extends BaseController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UpmsLogController.class);
 
     @Autowired
-    private UpmsLogServiceImpl upmsLogService;
-//    private UpmsLogService upmsLogService;
+//    private UpmsLogServiceImpl upmsLogService;
+    private UpmsLogService upmsLogService;
 
 
     @ApiOperation(value = "日志首页")

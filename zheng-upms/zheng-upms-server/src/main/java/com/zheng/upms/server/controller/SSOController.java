@@ -9,7 +9,9 @@ import com.zheng.upms.constant.UpmsResult;
 import com.zheng.upms.constant.UpmsResultConstant;
 import com.zheng.upms.dao.model.UpmsSystem;
 import com.zheng.upms.dao.model.UpmsSystemExample;
+import com.zheng.upms.service.UpmsSystemService;
 import com.zheng.upms.service.UpmsSystemServiceImpl;
+import com.zheng.upms.service.UpmsUserService;
 import com.zheng.upms.service.UpmsUserServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -54,13 +56,13 @@ public class SSOController extends BaseController {
     private final static String ZHENG_UPMS_SERVER_CODE = "zheng-upms-server-code";
 
     @Autowired
-    UpmsSystemServiceImpl upmsSystemService;
-//    UpmsSystemService upmsSystemService;
+//    UpmsSystemServiceImpl upmsSystemService;
+            UpmsSystemService upmsSystemService;
 
 
     @Autowired
-    UpmsUserServiceImpl upmsUserService;
-//    UpmsUserService upmsUserService;
+//    UpmsUserServiceImpl upmsUserService;
+            UpmsUserService upmsUserService;
 
 
     @Autowired

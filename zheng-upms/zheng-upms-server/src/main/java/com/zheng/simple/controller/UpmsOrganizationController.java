@@ -1,4 +1,4 @@
-package com.zheng.upms.server.controller.manage;
+package com.zheng.simple.controller;
 
 import com.baidu.unbiz.fluentvalidator.ComplexResult;
 import com.baidu.unbiz.fluentvalidator.FluentValidator;
@@ -38,7 +38,6 @@ public class UpmsOrganizationController extends BaseController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UpmsOrganizationController.class);
 
     @Autowired
-//    private UpmsOrganizationServiceImpl upmsOrganizationService;
     private UpmsOrganizationService upmsOrganizationService;
 
 

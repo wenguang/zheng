@@ -2,7 +2,9 @@ package com.zheng.upms.server.controller;
 
 import com.zheng.common.base.BaseController;
 import com.zheng.upms.dao.model.*;
+import com.zheng.upms.service.UpmsApiService;
 import com.zheng.upms.service.UpmsApiServiceImpl;
+import com.zheng.upms.service.UpmsSystemService;
 import com.zheng.upms.service.UpmsSystemServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -30,13 +32,13 @@ public class ManageController extends BaseController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ManageController.class);
 
 	@Autowired
-	private UpmsSystemServiceImpl upmsSystemService;
-//	private UpmsSystemService upmsSystemService;
+//	private UpmsSystemServiceImpl upmsSystemService;
+	private UpmsSystemService upmsSystemService;
 
 
 	@Autowired
-	private UpmsApiServiceImpl upmsApiService;
-//	private UpmsApiService upmsApiService;
+//	private UpmsApiServiceImpl upmsApiService;
+	private UpmsApiService upmsApiService;
 
 
 	@ApiOperation(value = "后台首页")

@@ -2,6 +2,7 @@ package com.zheng.upms.server.interceptor;
 
 import com.zheng.common.util.PropertiesFileUtil;
 import com.zheng.upms.dao.model.UpmsUser;
+import com.zheng.upms.service.UpmsApiService;
 import com.zheng.upms.service.UpmsApiServiceImpl;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
@@ -24,8 +25,8 @@ public class UpmsInterceptor extends HandlerInterceptorAdapter {
     private static final String ZHENG_OSS_ALIYUN_OSS_POLICY = PropertiesFileUtil.getInstance("zheng-oss-client").get("zheng.oss.aliyun.oss.policy");
 
     @Autowired
-    UpmsApiServiceImpl upmsApiService;
-//    UpmsApiService upmsApiService;
+//    UpmsApiServiceImpl upmsApiService;
+    UpmsApiService upmsApiService;
 
 
     @Override

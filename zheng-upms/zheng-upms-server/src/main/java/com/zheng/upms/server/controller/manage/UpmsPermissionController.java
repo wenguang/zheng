@@ -11,9 +11,7 @@ import com.zheng.upms.dao.model.UpmsPermission;
 import com.zheng.upms.dao.model.UpmsPermissionExample;
 import com.zheng.upms.dao.model.UpmsSystem;
 import com.zheng.upms.dao.model.UpmsSystemExample;
-import com.zheng.upms.service.UpmsSystemService;
-import com.zheng.upms.service.UpmsApiServiceImpl;
-import com.zheng.upms.service.UpmsPermissionServiceImpl;
+import com.zheng.upms.service.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang.StringUtils;
@@ -43,17 +41,17 @@ public class UpmsPermissionController extends BaseController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UpmsPermissionController.class);
 
     @Autowired
-    private UpmsPermissionServiceImpl upmsPermissionService;
-//    private UpmsPermissionService upmsPermissionService;
+//    private UpmsPermissionServiceImpl upmsPermissionService;
+    private UpmsPermissionService upmsPermissionService;
 
 
     @Autowired
-    private UpmsSystemService upmsSystemService;
 //    private UpmsSystemService upmsSystemService;
+    private UpmsSystemService upmsSystemService;
 
     @Autowired
-    private UpmsApiServiceImpl upmsApiService;
-//    private UpmsApiService upmsApiService;
+//    private UpmsApiServiceImpl upmsApiService;
+    private UpmsApiService upmsApiService;
 
     @ApiOperation(value = "权限首页")
     @RequiresPermissions("upms:permission:read")

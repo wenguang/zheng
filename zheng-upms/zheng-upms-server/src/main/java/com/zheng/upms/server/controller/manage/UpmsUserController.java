@@ -41,33 +41,33 @@ public class UpmsUserController extends BaseController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UpmsUserController.class);
 
     @Autowired
-    private UpmsUserServiceImpl upmsUserService;
-//    private UpmsUserService upmsUserService;
+//    private UpmsUserServiceImpl upmsUserService;
+    private UpmsUserService upmsUserService;
 
 
     @Autowired
-    private UpmsRoleServiceImpl upmsRoleService;
-//    private UpmsRoleService upmsRoleService;
+//    private UpmsRoleServiceImpl upmsRoleService;
+    private UpmsRoleService upmsRoleService;
 
 
     @Autowired
-    private UpmsOrganizationServiceImpl upmsOrganizationService;
-//    private UpmsOrganizationService upmsOrganizationService;
+//    private UpmsOrganizationServiceImpl upmsOrganizationService;
+    private UpmsOrganizationService upmsOrganizationService;
 
 
     @Autowired
-    private UpmsUserOrganizationServiceImpl upmsUserOrganizationService;
-//    private UpmsUserOrganizationService upmsUserOrganizationService;
+//    private UpmsUserOrganizationServiceImpl upmsUserOrganizationService;
+    private UpmsUserOrganizationService upmsUserOrganizationService;
 
 
     @Autowired
-    private UpmsUserRoleServiceImpl upmsUserRoleService;
-//    private UpmsUserRoleService upmsUserRoleService;
+//    private UpmsUserRoleServiceImpl upmsUserRoleService;
+    private UpmsUserRoleService upmsUserRoleService;
 
 
     @Autowired
-    private UpmsUserPermissionServiceImpl upmsUserPermissionService;
-//    private UpmsUserPermissionService upmsUserPermissionService;
+//    private UpmsUserPermissionServiceImpl upmsUserPermissionService;
+    private UpmsUserPermissionService upmsUserPermissionService;
 
 
     @ApiOperation(value = "用户首页")

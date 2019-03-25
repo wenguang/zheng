@@ -9,6 +9,7 @@ import org.apache.shiro.session.mgt.ValidatingSession;
 import org.apache.shiro.session.mgt.eis.CachingSessionDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
 
 import java.io.Serializable;
@@ -18,6 +19,7 @@ import java.util.*;
  * 基于redis的sessionDao，缓存共享session
  * Created by shuzheng on 2017/2/23.
  */
+@Component
 public class UpmsSessionDao extends CachingSessionDAO {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UpmsSessionDao.class);
