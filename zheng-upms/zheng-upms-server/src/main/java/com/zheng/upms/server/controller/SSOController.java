@@ -56,17 +56,25 @@ public class SSOController extends BaseController {
     private final static String ZHENG_UPMS_SERVER_CODE = "zheng-upms-server-code";
 
     @Autowired
-//    UpmsSystemServiceImpl upmsSystemService;
-            UpmsSystemService upmsSystemService;
+    UpmsSystemService upmsSystemService;
 
 
     @Autowired
-//    UpmsUserServiceImpl upmsUserService;
-            UpmsUserService upmsUserService;
+    UpmsUserService upmsUserService;
 
 
     @Autowired
     UpmsSessionDao upmsSessionDao;
+
+
+
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    @ResponseBody
+    public Object hello() {
+        return new UpmsResult(UpmsResultConstant.SUCCESS, "hello spring mvc");
+    }
+
+
 
     @ApiOperation(value = "认证中心首页")
     @RequestMapping(value = "/index", method = RequestMethod.GET)

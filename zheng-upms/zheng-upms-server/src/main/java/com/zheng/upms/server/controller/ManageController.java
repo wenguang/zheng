@@ -32,12 +32,10 @@ public class ManageController extends BaseController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ManageController.class);
 
 	@Autowired
-//	private UpmsSystemServiceImpl upmsSystemService;
 	private UpmsSystemService upmsSystemService;
 
 
 	@Autowired
-//	private UpmsApiServiceImpl upmsApiService;
 	private UpmsApiService upmsApiService;
 
 

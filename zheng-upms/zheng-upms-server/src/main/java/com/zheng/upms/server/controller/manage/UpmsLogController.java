@@ -34,7 +34,6 @@ public class UpmsLogController extends BaseController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UpmsLogController.class);
 
     @Autowired
-//    private UpmsLogServiceImpl upmsLogService;
     private UpmsLogService upmsLogService;
 
 

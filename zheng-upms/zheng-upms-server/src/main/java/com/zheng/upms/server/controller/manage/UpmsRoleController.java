@@ -42,7 +42,6 @@ public class UpmsRoleController extends BaseController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UpmsRoleController.class);
 
     @Autowired
-//    private UpmsRoleServiceImpl upmsRoleService;
     private UpmsRoleService upmsRoleService;
 
 

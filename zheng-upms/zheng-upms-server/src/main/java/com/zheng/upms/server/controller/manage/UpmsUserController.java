@@ -41,32 +41,26 @@ public class UpmsUserController extends BaseController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UpmsUserController.class);
 
     @Autowired
-//    private UpmsUserServiceImpl upmsUserService;
     private UpmsUserService upmsUserService;
 
 
     @Autowired
-//    private UpmsRoleServiceImpl upmsRoleService;
     private UpmsRoleService upmsRoleService;
 
 
     @Autowired
-//    private UpmsOrganizationServiceImpl upmsOrganizationService;
     private UpmsOrganizationService upmsOrganizationService;
 
 
     @Autowired
-//    private UpmsUserOrganizationServiceImpl upmsUserOrganizationService;
     private UpmsUserOrganizationService upmsUserOrganizationService;
 
 
     @Autowired
-//    private UpmsUserRoleServiceImpl upmsUserRoleService;
     private UpmsUserRoleService upmsUserRoleService;
 
 
     @Autowired
-//    private UpmsUserPermissionServiceImpl upmsUserPermissionService;
     private UpmsUserPermissionService upmsUserPermissionService;
 
 

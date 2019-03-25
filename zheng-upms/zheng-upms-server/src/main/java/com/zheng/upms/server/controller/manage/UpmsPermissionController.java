@@ -41,16 +41,13 @@ public class UpmsPermissionController extends BaseController {
     private static final Logger LOGGER = LoggerFactory.getLogger(UpmsPermissionController.class);
 
     @Autowired
-//    private UpmsPermissionServiceImpl upmsPermissionService;
     private UpmsPermissionService upmsPermissionService;
 
 
     @Autowired
-//    private UpmsSystemService upmsSystemService;
     private UpmsSystemService upmsSystemService;
 
     @Autowired
-//    private UpmsApiServiceImpl upmsApiService;
     private UpmsApiService upmsApiService;
 
     @ApiOperation(value = "权限首页")
