@@ -26,8 +26,10 @@
     <context:component-scan base-package="com.zheng.upms.server.controller">
     </context:component-scan>
 
+    <!-- 日志记录AOP实现 -->
+    <bean class="com.zheng.upms.client.interceptor.LogAspect"/>
 
-    <!-- 拦截器 -->
+    <!-- MVC拦截器 -->
     <mvc:interceptors>
         <!-- 获取登录信息 -->
         <mvc:interceptor>
@@ -35,6 +37,52 @@
             <bean class="com.zheng.upms.server.interceptor.UpmsInterceptor"></bean>
         </mvc:interceptor>
     </mvc:interceptors>
+
+    <!-- 返回ResponseBody响应类型 -->
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/html;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <!-- i18n国际化 -->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <!-- 找不到key时用key作为返回值 -->
+        <property name="useCodeAsDefaultMessage" value="false"/>
+        <!-- 资源刷新时间 -->
+        <property name="cacheSeconds" value="60"/>
+        <!-- 资源文件列表 -->
+        <property name="basenames">
+            <list>
+                <value>classpath:i18n/messages</value>
+            </list>
+        </property>
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
+
+    <!-- 根目录'/'对应页面 -->
+    <mvc:view-controller path="/" view-name="/index.jsp"/>
+
+    <!-- Jsp视图 -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="order" value="1"/>
+        <property name="prefix" value="/WEB-INF/jsp"/>
+        <property name="suffix" value=""/>
+        <property name="contentType" value="text/html; charset=utf-8"/>
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+    </bean>
+
+    <!-- 配置静态资源，不被DispatcherServlet处理，增加缓存时间10秒 -->
+    <mvc:resources mapping="/favicon.ico" location="/favicon.ico"/>
+    <mvc:resources mapping="/resources/**" location="/resources/" cache-period="10"/>
+    <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"/>
+    <mvc:resources mapping="/swagger-ui.html" location="classpath:/META-INF/resources/"/>
 
 
 </beans>
